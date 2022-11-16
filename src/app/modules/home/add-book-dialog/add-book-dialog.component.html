@@ -1,0 +1,45 @@
+<h3 mat-dialog-title>{{ book && book.id ? 'Edit' : 'Add' }} Book List</h3>
+
+<mat-dialog-content>
+  <form [formGroup]="form" (ngSubmit)="save()" fxLayout="column">
+
+    <div fxLayout="row" fxLayoutGap="12px">
+      <mat-form-field appearance="outline">
+        <mat-label>Book Title</mat-label>
+        <input matInput formControlName="title">
+      </mat-form-field>
+  
+      <mat-form-field appearance="outline">
+        <mat-label>Year</mat-label>
+        <input matInput formControlName="year">
+      </mat-form-field>
+    </div>
+
+    <div fxLayout="row" fxLayoutGap="12px">
+      <mat-form-field appearance="outline">
+        <mat-label>Author Name</mat-label>
+        <input matInput formControlName="author">
+      </mat-form-field>
+  
+      <mat-form-field appearance="outline">
+        <mat-label>List</mat-label>
+        <mat-select formControlName="list">
+          <mat-option *ngFor="let list of lists" [value]="list.id">{{list.name}}</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Favourite count</mat-label>
+      <input matInput formControlName="favourite_count" type="number">
+    </mat-form-field>
+    
+
+    <div fxLayoutAlign="end center" fxLayoutGap="12px">
+      <button mat-flat-button color="warn" mat-dialog-close>Cancel</button>
+      <button mat-flat-button color="primary" [disabled]="form.invalid" type="submit">
+        Save
+      </button>
+    </div>
+  </form>
+</mat-dialog-content>

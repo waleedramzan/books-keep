@@ -1,0 +1,12 @@
+<h3 mat-dialog-title>Confirmation</h3>
+
+<mat-dialog-content>
+  <div>
+    {{ message }}
+  </div>
+</mat-dialog-content>
+
+<mat-dialog-actions fxLayoutAlign="end center">
+  <button mat-flat-button color="warn" mat-dialog-close>Cancel</button>
+  <button mat-flat-button color="primary" type="button" (click)="onConfirm()">Confirm</button>
+</mat-dialog-actions>

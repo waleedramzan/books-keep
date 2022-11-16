@@ -1,0 +1,15 @@
+<h3 mat-dialog-title>Add Book List</h3>
+
+<mat-dialog-content>
+  <form [formGroup]="form" (ngSubmit)="addList()">
+    <mat-form-field appearance="outline">
+      <mat-label>Name</mat-label>
+      <input matInput formControlName="name">
+    </mat-form-field>
+
+    <div fxLayoutAlign="end center" fxLayoutGap="12px">
+      <button mat-flat-button color="warn" mat-dialog-close>Cancel</button>
+      <button mat-flat-button color="primary" [disabled]="form.invalid" type="submit">Add List</button>
+    </div>
+  </form>
+</mat-dialog-content>
