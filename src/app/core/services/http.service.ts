@@ -25,6 +25,14 @@ export class HttpService {
     return this.http.post(`${SERVER_URL}/lists`, body);
   }
 
+  updateBookList(listId: number, body: BookList) {
+    return this.http.put(`${SERVER_URL}/lists/${listId}`, body);
+  }
+
+  deleteBookList(listId: number) {
+    return this.http.delete(`${SERVER_URL}/lists/${listId}`);
+  }
+
   createBook(body: Book) {
     return this.http.post(`${SERVER_URL}/books`, body);
   }

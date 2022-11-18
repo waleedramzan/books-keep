@@ -27,3 +27,11 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
     margin-top: #{ ($i * 2) + 'px' } !important;
   }
 }
+
+@for $i from 0 through 40 {
+  .pt-#{$i * 2} {
+    padding-top: #{ ($i * 2) + 'px' } !important;
+  }
+}
+
+.ml-2rem { margin-left: 2rem !important }

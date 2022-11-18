@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { HttpService } from 'src/app/core/services/http.service';
-import { AddBookDialogComponent } from '../add-book-dialog/add-book-dialog.component';
-import { AddBookListDialogComponent } from '../add-book-list-dialog/add-book-list-dialog.component';
+import { AddBookDialogComponent } from '../../../shared/dialogs/add-book-dialog/add-book-dialog.component';
+import { AddBookListDialogComponent } from '../../../shared/dialogs/add-book-list-dialog/add-book-list-dialog.component';
 import { find } from 'lodash';
 import { ConfirmDialogComponent } from 'src/app/core/dialogs/confirm-dialog/confirm-dialog.component';
 import { Book } from 'src/app/core/models/Book';
@@ -16,10 +16,10 @@ function compare(a: number | string, b: number | string, isAsc: boolean) {
 
 @Component({
   selector: 'app-books-list',
-  templateUrl: './books-list.component.html',
-  styleUrls: ['./books-list.component.scss']
+  templateUrl: './books.component.html',
+  styleUrls: ['./books.component.scss']
 })
-export class BooksListComponent implements OnInit {
+export class BooksComponent implements OnInit {
 
   dataSource!: MatTableDataSource<Book>;
   lists: BookList [] = [];
@@ -107,10 +107,6 @@ export class BooksListComponent implements OnInit {
         this.getBookLists();
       }
     });
-  }
-
-  openAddListDialog() {
-    this.dialog.open(AddBookListDialogComponent);
   }
 
   sortData(sort: Sort) {

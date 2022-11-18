@@ -1,7 +1,6 @@
 <div class="h-100 m-20">
   <div fxLayout="row" fxLayoutAlign="end" fxLayoutGap="20px">
     <button mat-raised-button color="primary" (click)="openAddBookDialog()">Add Book</button>
-    <button mat-raised-button color="primary" (click)="openAddListDialog()">Add List</button>
   </div>
 
   <div *ngIf="!dataSource?.data?.length && !isLoading" class="text-center">
